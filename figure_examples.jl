@@ -8,7 +8,7 @@ println(repeat("=", 80))
 
 println("Theorem 6.5: PTCR ≱ TD[PT]")
 
-println("Figure 4:")
+println("Figure 6:")
 H = Hypergraph([:A, :B, :C, :D, :E, :F], 
                  [[:A, :B], 
                  [:A, :C], 
@@ -25,13 +25,13 @@ H = Hypergraph([:A, :B, :C, :D, :E, :F],
 ])
 
 @show(H)
-pt_ex_4 = pt_time(H)
-@show(pt_ex_4)
+pt_ex_6 = pt_time(H)
+@show(pt_ex_6)
 
-ptcr_1_ex_4 = ptcr_time(H, 1)
-@show(ptcr_1_ex_4)
+ptcr_1_ex_6 = ptcr_time(H, 1)
+@show(ptcr_1_ex_6)
 
-println("Figure 5:")
+println("Figure 9:")
 H = Hypergraph([:A, :B, :C, :D, :E, :F, :G, :H, :I, :J, :K], 
                  [[:A, :B], 
                  [:A, :C], 
@@ -62,14 +62,14 @@ H = Hypergraph([:A, :B, :C, :D, :E, :F, :G, :H, :I, :J, :K],
 
 
 @show(H)
-pt_ex_5 = pt_time(H)
-@show(pt_ex_5)
+pt_ex_9 = pt_time(H)
+@show(pt_ex_9)
 
-ptcr_1_ex_5 = ptcr_time(H, 1)
-@show(ptcr_1_ex_5)
+ptcr_1_ex_9 = ptcr_time(H, 1)
+@show(ptcr_1_ex_9)
 
-ptcr_1_5_ex_5 = ptcr_time(H, 1.5)
-@show(ptcr_1_5_ex_5)
+ptcr_1_5_ex_9 = ptcr_time(H, 1.5)
+@show(ptcr_1_5_ex_9)
 
 println(repeat("=", 80))
 
@@ -114,19 +114,19 @@ H = Hypergraph([:A, :B, :C, :D, :E, :F, :G, :H, :I, :J, :K, :L],
 ])
 
 @show(H)
-pt_ex_6 = pt_time(H)
-@show(pt_ex_6)
+pt_ex_10 = pt_time(H)
+@show(pt_ex_10)
 
-ptcr_1_ex_6 = ptcr_time(H, 1)
-@show(ptcr_1_ex_6)
+ptcr_1_ex_10 = ptcr_time(H, 1)
+@show(ptcr_1_ex_10)
 
-ptcr_1_5_ex_6 = ptcr_time(H, 1.5)
-@show(ptcr_1_5_ex_6)
+ptcr_1_5_ex_10 = ptcr_time(H, 1.5)
+@show(ptcr_1_5_ex_10)
 
 using CSV
 
 CSV.write("figure_examples_runtimes.csv", (Algorithm=["PT", "PTCR", "PT", "PTCR","PTCR","PT","PTCR","PTCR"],
-                                            Example=["Figure 4", "Figure 4", "Figure 5", "Figure 5", "Figure 5", "Figure 6", "Figure 6", "Figure 6"],
-                                            TimeExponent=[pt_ex_4, ptcr_1_ex_4, pt_ex_5, ptcr_1_ex_5, ptcr_1_5_ex_5, pt_ex_5, ptcr_1_ex_6, ptcr_1_5_ex_6],
+                                            Example=["Figure 6", "Figure 6", "Figure 9", "Figure 9", "Figure 9", "Figure 10", "Figure 10", "Figure 10"],
+                                            TimeExponent=[pt_ex_6, ptcr_1_ex_6, pt_ex_9, ptcr_1_ex_9, ptcr_1_5_ex_9, pt_ex_10, ptcr_1_ex_10, ptcr_1_5_ex_10],
                                             SpaceExponent=[0.0, 1.0, 0.0, 1.0, 1.5, 0.0, 1.0, 1.5]))
 
